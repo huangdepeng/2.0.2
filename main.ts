@@ -827,12 +827,12 @@ namespace hicbit {
 
     function InitColor(): boolean {
         let id = i2cread(APDS9960_ID);
-        //  serial.writeLine("id:")
-        //  serial.writeNumber(id); 
-        // if (!(id == APDS9960_ID_1 || id == APDS9960_ID_2)) {
-        //     return false;
-        // }
-        //  serial.writeLine("set mode:")
+         serial.writeLine("id:")
+         serial.writeNumber(id); 
+        if (!(id == APDS9960_ID_1 || id == APDS9960_ID_2)) {
+            return false;
+        }
+         serial.writeLine("set mode:")
         setMode(ALL, OFF);
         i2cwrite(APDS9960_ATIME, DEFAULT_ATIME);
         i2cwrite(APDS9960_WTIME, DEFAULT_WTIME);
